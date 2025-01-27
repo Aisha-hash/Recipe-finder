@@ -23,7 +23,7 @@ const RecipeDetail = () => {
   const [recipe, setRecipe] = useState(null);
   const [isFavorite, setIsFavorite] = useState(false);
 
-  const API_URL = "https://recipe-backend.onrender.com";
+  const API_URL = "https://recipe-finder-1-ekst.onrender.com";
 
   // Get the current list of favorite recipes from the Redux store
   const favorites = useSelector((state) => state.favorites.favorites);
