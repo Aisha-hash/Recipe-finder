@@ -8,7 +8,12 @@ import path from "path";
  */
 async function loadRecipes() {
   try {
-    const recipesPath = path.join(__dirname, 'data', 'recipes.json');
+    // Get the absolute path of recipes.json using import.meta.url
+    const recipesPath = path.join(
+      path.dirname(new URL(import.meta.url).pathname),
+      'data', 
+      'recipes.json'
+    );
     const recipesData = await fs.readFile(recipesPath, 'utf-8');
     return JSON.parse(recipesData);
   } catch (error) {
