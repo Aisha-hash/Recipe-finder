@@ -39,7 +39,7 @@ async function saveRecipe(recipe) {
 }
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 // Middleware to parse incoming JSON requests
 app.use(express.json());
