@@ -23,6 +23,8 @@ const RecipeDetail = () => {
   const [recipe, setRecipe] = useState(null);
   const [isFavorite, setIsFavorite] = useState(false);
 
+  const API_URL = "https://recipe-backend.onrender.com";
+
   // Get the current list of favorite recipes from the Redux store
   const favorites = useSelector((state) => state.favorites.favorites);
 
@@ -35,7 +37,7 @@ const RecipeDetail = () => {
   useEffect(() => {
     const fetchRecipe = async () => {
       try {
-        const response = await fetch(`http://localhost:3001/recipes/${id}`); // Fetch recipe by ID
+        const response = await fetch(`${API_URL}/recipes/${id}`); // Fetch recipe by ID
         if (!response.ok) {
           throw new Error("Recipe not found");
         }
