@@ -8,7 +8,8 @@ import path from "path";
  */
 async function loadRecipes() {
   try {
-    const recipesData = await fs.readFile("./data/recipes.json", "utf-8");
+    const recipesPath = path.join(__dirname, 'data', 'recipes.json');
+    const recipesData = await fs.readFile(recipesPath, 'utf-8');
     return JSON.parse(recipesData);
   } catch (error) {
     console.error("Error reading recipes file:", error);
